@@ -8,8 +8,11 @@
   <body>
 
     <h2>Your song:</h2>
-      <h3>{{name}}</h3>
+      {{#songs}}
 
+          <h3>{{name}}</h3>
+          <h3>Length: {{length}}</h3>
+      {{/songs}}
 
   </body>
 </html>

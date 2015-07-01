@@ -13,11 +13,11 @@
       <h2>{{name}}</h2>
       <h3>Length: {{length}}</h3>
       <form class="" action="/songs/{{_id}}/show" method="GET">
-        <input type="submit" name="name" value="Show">
+        <input type="submit" name="show" value="Show">Show</input>
       </form>
 
       <form class="" action="/songs/{{_id}}/delete" method="POST">
-        <input type="submit" name="name" value="Destroy">
+        <input type="submit" name="name" value="Destroy"></input>
       </form>
     {{/songs}}
 

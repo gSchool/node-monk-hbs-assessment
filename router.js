@@ -49,44 +49,12 @@ routes.addRoute('/songs/new', function (req, res, url) { // url is never used
   }
 });
 
-routes.addRoute('/songs/:id', function (req, res, url) { // :_id?
-  res.setHeader('Content-Type', 'text/html');
-  if (req.method === 'GET') {
-    songs.findOne({_id: url.params.id}, function(err, doc) { // just one doc
-      if (err) {throw err; }
-      else {
-        var file = fs.readFileSync('templates/songs/edit.html'); // show.html?
-        // var data = doc;
-        var template = mustache.render(file.toString(), doc);
-        res.end(template);
-      }
-    });
-  }
-  if (req.method === 'POST') {
-    var data = '';
-    req.on('data', function(chunk) {
-      data += chunk;
-    });
-    req.on('end', function(){
-      var song = qs.parse(data);
-      songs.update({_id: url.params.id}, song, function(err, doc) { // doc is never used
-        if (err) {res.end('error'); }
-        else {
-          res.writeHead(302, {'Location': '/songs'});
-          res.end();
-        }
-      });
-    });
-  }
-});
-
 routes.addRoute('/songs/:id/delete', function (req, res, url) {
   if (req.method === 'POST') {
     songs.remove({_id: url.params.id}, function(err, doc) {
       if (err) {throw err; }
       else {
         res.writeHead(302, {'Location': '/songs'});
-        var file = fs.readFileSync('templates/songs/show.html'); //bands?
         res.end();
       }
     });
@@ -94,12 +62,13 @@ routes.addRoute('/songs/:id/delete', function (req, res, url) {
 });
 
 routes.addRoute('/songs/:id/show', function (req, res, url) {
-  if (req.method === 'GET') { // POST?
+  res.setHeader('Content-Type', 'text/html');
+  if (req.method === 'GET') {
     songs.findOne({_id: url.params.id}, function(err, doc) {
       if (err) {throw err; }
       else {
-        var file = file.readFileSync('templates/songs/show.html');
-        var template = mustache.render(file.toString(), doc);
+        var file = fs.readFileSync('templates/songs/show.html');
+        var template = mustache.render(file.toString(), {songs: doc}); // doc (singular)
         res.end(template);
       }
     });
