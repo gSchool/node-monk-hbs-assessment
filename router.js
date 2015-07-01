@@ -33,7 +33,11 @@ routes.addRoute('/songs/new', function (req, res, url) { // url is never used
       data += chunk;
     });
     req.on('end', function(){
+      // console.log(data);
       var song = qs.parse(data);
+      // console.log(song);
+      // var length = qs.parse(data); // how to parse length from title?
+      // console.log(length);
       songs.insert(song, function(err, doc) { // doc is never used
         if (err) {res.end('error'); }
         else {
