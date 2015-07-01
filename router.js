@@ -33,29 +33,6 @@ routes.addRoute('/songs', (req, res, url) => {
     console.log('Thanks for the data!')
   }
 })
-routes.addRoute('/bands/new', function (req,res,url) {
-  console.log(req.url)
-  res.setHeader('Content-Type', 'text/html')
-  if (req.method === 'GET') {
-    console.log(req.method)
-    var file = fs.readFileSync('templates/bands/new.html')
-    var template = view.render(file.toString(), {})//called docs, an array from mongo
-    res.end(template)
-  }
-})
-routes.addRoute('/bands/touring', (req, res, url) => {
-  console.log(req.url)
-  res.setHeader('Content-Type', 'text/html')
-  if (req.method === 'GET') {
-    console.log(req.method);
-    bands.find({onTour: true}, function(err, docs) {
-      if (err) res.end('It broke')
-      var file = fs.readFileSync('templates/bands/index.html')
-      var template = view.render(file.toString(), {bands: docs})//called docs, an array from mongo
-      res.end(template)
-    })
-  }
-})
 routes.addRoute('/songs/new', function (req,res,url) {
   console.log(req.url)
   res.setHeader('Content-Type', 'text/html')
@@ -64,6 +41,28 @@ routes.addRoute('/songs/new', function (req,res,url) {
     var file = fs.readFileSync('templates/songs/new.html')
     var template = view.render(file.toString(), {})
     res.end(template)
+  }
+})
+routes.addRoute('/songs/:id', function(req, res, url) {
+  console.log(req.url)
+  res.setHeader('Content-Type', 'text/html')
+  if (req.method === 'GET') {
+    console.log(req.method);
+    songs.findOne({_id: url.params.id}, function(err, doc) {
+      if (err) res.end('It broke')
+      var file = fs.readFileSync('templates/songs/show.html')
+      var template = view.render(file.toString(), doc) 
+      res.end(template)
+    })
+  }
+})
+routes.addRoute('/bands/:id/delete', (req, res, url) => {
+  if (req.method === 'POST') {
+    bands.remove({_id: url.params.id}, function(err, doc) {
+      if (err) console.log(err)
+      res.writeHead(302, {'Location': '/bands'})
+      res.end()
+    })
   }
 })
 routes.addRoute('/public/*', function (req, res, url) { // dynamically selecting public anything
