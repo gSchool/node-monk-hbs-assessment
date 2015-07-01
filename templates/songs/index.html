@@ -8,11 +8,11 @@
 <body>
   <h1>Welcome to Songs!</h1>
     {{#songs}}
-  <a href='/songs{{_id}}/'><h2>{{name}} {{length}}</h2></a>
+  <a href='/songs/{{_id}}/'><h2>{{name}} {{length}}</h2></a>
   <form action='/songs/{{_id}}/delete' method='post'>
     <button type='submit'>Delete {{name}} {{length}}</button>
   </form>
-    <button><a href='/templates/songs/new.html'></a>Add a Song</button>
-    {{/songs}}
+<!--     <a href='/templates/songs/new.html'>Add a Song</a>
+ -->    {{/songs}}
 </body>
 </html>

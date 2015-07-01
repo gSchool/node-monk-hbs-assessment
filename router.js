@@ -8,8 +8,8 @@ var routes = require('routes')(),
 
 routes.addRoute('/songs', (req, res, url) => {
   console.log(url.route)
-  res.setHeader('Content-Type', 'text/html')
   if (req.method === 'GET') {
+    res.setHeader('Content-Type', 'text/html')
     songs.find({}, function (err, docs) {
       var file = fs.readFileSync('templates/songs/index.html')
       var template = view.render(file.toString(), { songs: docs})
@@ -39,12 +39,13 @@ routes.addRoute('/songs/new', (req, res, url) => {
   console.log(url.route)
   if (req.method === 'GET') {
     res.setHeader('Content-Type', 'text/html')
-    songs.find({}, function (err, docs) {
+    // songs.find({}, function (err, docs) {
     console.log('Here')
-      var file = fs.readfileSync('templates/songs/new.html')
+      var file = fs.readFileSync('templates/songs/new.html')
       var template = view.render(file.toString(), {})
+      // if (err) console.log('boop in new')
       res.end(template)
-    })
+    // })
   }
 })
 
