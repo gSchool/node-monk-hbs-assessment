@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Song!</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <h1>{{title}}</h1>
+  <form action="/songs" method="POST">
+    <label for="title">Song Title</label>
+    <input type="text" id="title" name="title"><br><br>
+    <label for="length">Song Length in ms</label>
+    <input type="text" id="length" name="length"><br><br>
+    <input type="submit">
+  </form>
+</body>
+</html>
