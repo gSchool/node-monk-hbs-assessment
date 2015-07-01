@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/public/style.css">
+  <title>New Song</title>
+</head>
+<body>
+  <form action="/songs" method="post">
+    <label for="songTitle">Song Title: </label>
+      <input id="songTitle" type="text" name="songTitle">
+    </label>
+    <label for="length">Length: (in milliseconds)</label>
+      <input id="length" type="text" name="length">
+    </label>
+
+    <p>
+
+    <input type="submit" value="Create new Song">
+  </form>
+</body>
+</html>
