@@ -1,5 +1,5 @@
 var http = require('http'),
-    router = require('./router'),
+    router = require('./router.js'),
     url = require('url')
 
 var server = http.createServer(function (req, res) {
