@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Song Collection</title>
+  <link rel="stylesheet" href="/public/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'><body>
+<body>
+  <h1>Song Collection!</h1>
+  {{#songs}}
+  <a href="/songs/{{_id}}"><h2>Title: {{songTitle}}</h2><h3>Length in Milliseconds: {{length}}</h3</a>
+  <form action="/songs/{{_id}}/delete" method="post">
+    <input type="submit" value="Delete">
+  </form>
+  {{/songs}}
+</body>
+</html>
