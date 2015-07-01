@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a song!</title>
+    <link rel="stylesheet" href="/public/style.css"/>
+</head>
+<body>
+<a href="/songs">Back to list</a><br/>
+
+<div class="centered">
+    Add a Song
+    <form action="/songs" method="post">
+        Name: <input type="text" name="title"/> <br/>
+        Length in ms: <input type="text" name="length"/> <br/>
+
+        <button type="submit">add song!</button>
+    </form>
+</div>
+</body>
+</html>

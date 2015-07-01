@@ -1,0 +1,15 @@
+body {
+    background: #feffe7;
+}
+a {
+    color: darkslategray;
+}
+div.centered {
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background: #f9f9f9;
+    padding: 10px;
+}

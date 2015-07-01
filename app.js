@@ -8,12 +8,20 @@ var server = http.createServer(function (req, res) {
     res.end()
     return
   }
+
   var path = url.parse(req.url).pathname
   var currentRoute = router.match(path)
-  currentRoute.fn(req, res, currentRoute)
+  console.log(req.url)
+  console.log(currentRoute)
+  if (currentRoute) {
+    currentRoute.fn(req, res, currentRoute)
+  } else {
+    res.writeHead(404, { 'Content-Type': 'text/html' });
+    res.end('404')
+  }
 })
 
-server.listen(8080, function (err) {
+server.listen(9001, function (err) {
   if (err) console.log('Doah', err)
-  console.log('Woot. A server is running on port 8080')
+  console.log('Woot. A server is running on port 9001')
 })
