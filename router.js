@@ -14,18 +14,19 @@ routes.addRoute('/songs/new', function (req, res, url) {
     var template = view.render(file.toString(), {})
     res.end(template)
   }
-
 // POST request to add new information to the songCollection database
   if (req.method === 'POST') {
     var data = ''
     req.on('data', function (chunk) {
       data += chunk
     })
+  req.on('end', function() {
     var song = qs.parse(data)
     songs.insert(song, function (err, doc) {
       if (err) throw err
       res.writeHead(302, {'Location': '/songs'})
       res.end()
+      })
     })
   }
 })
