@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Songs you may like</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <div class="containingBox">
+      <h1 class = "title">Check Out These Songs!</h1>
+ <form action="/songs" method = "POST">
+    <input name = "artist" type="text" placeholder="Artist">
+    <input name = "title" type="text" placeholder="Track Name">
+    <input name = "length" type="text" placeholder="Length in milliseconds">
+    <button type="submit">Add new song</button>
+  </form>
+
+    {{#songs}}
+    <a href="/songs/{{_id}}/"><h2>{{artist}}</h2></a>
+    <a href="/songs/{{_id}}/"><h3>{{title}}</h3></a>
+    <h5>{{length}} in milliseconds for some reason</h5>
+    <form action="/songs/{{_id}}/delete" method="POST">
+      <button type="submit">Delete Song</button>
+    </form>
+    {{/songs}}
+  </div>
+</body>
+</html>
