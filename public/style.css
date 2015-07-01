@@ -1,0 +1,14 @@
+
+h1 {
+  color: blue;
+}
+
+h2 {
+  font-size: 30px;
+  color: green;
+}
+
+h2 a {
+  text-decoration: none;
+  color: orange;
+}

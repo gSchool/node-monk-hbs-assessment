@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/public/style.css" title="" type="text/css" />
+    <title></title>
+    
+  </head>
+  <body>
+    <h1>Song Names</h1>
+    <button type="new"><a href="/songs/new">Add New Song</a></button>
+    {{#songs}}
+    <h2><a href="/songs/{{_id}}">{{title}}</a></h2>
+    <button type="delete"><a href="/songs/{{_id}}/delete">Delete</a></button>
+    {{/songs}}
+  </body>
+</html>
