@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/public/style.css">
+  <title>Document</title>
+</head>
+<body>
+<section>
+  <h1>Title of the song<span>Song Length/ms</span></h1>
+  {{#songs}}
+    <h2><a href="/songs/{{_id}}">{{title}}</a><span>{{length}}</span></h2>
+  {{/songs}}
+</section>
+</body>
+</html>

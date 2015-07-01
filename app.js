@@ -10,6 +10,7 @@ var server = http.createServer(function (req, res) {
   }
   var path = url.parse(req.url).pathname
   var currentRoute = router.match(path)
+  console.log(currentRoute)
   currentRoute.fn(req, res, currentRoute)
 })
 
