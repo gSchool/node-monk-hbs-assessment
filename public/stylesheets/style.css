@@ -1,5 +1,5 @@
 body {
-  color: hotpink;
+  color: purple;
   font-family: sans-serif;
   text-align: center;
 }
@@ -14,7 +14,7 @@ h2 {
 
 a {
   text-decoration: none;
-  color: purple;
+  color: hotpink;
 }
 
 a:hover {
