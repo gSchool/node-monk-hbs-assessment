@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a Song</title>
+  <link rel="stylesheet" href="/public/stylesheets/style.css">
+</head>
+<body>
+  <h1>Add a Song | <a href="/songs">List of Songs</a></h1>
+
+  <form action="/songs" method="post">
+    <!-- <label for="name">Band Name</label> -->
+    <input type="text" id="title" name="title" value="" placeholder="Song Title">
+    <input type="text" id="length" name="length" value="" placeholder="Length in Milliseconds">
+    <input type="submit" value= "Add Song">
+  </form>
+  <br>
+  <img src="http://www.thoburnillustrations.com/wp-content/uploads/2010/03/bass_unused2.jpg" alt="" height="350">
+
+</body>
+</html>
