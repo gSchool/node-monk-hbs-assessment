@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Songzzzzz</title>
+    <link rel="stylesheet" type="text/css" href="public/style.css">
+</head>
+
+<body>
+    {{#songs}}
+    <h2><a href="show.html">
+      {{title}} by {{artist}} is {{length}} milliseconds.
+    </a></h2> {{/songs}}
+    <form action="/songs/{{_id}}/delete" method="POST">
+        <input id="title" name="title" type="text" placeholder="title of song to Destroy!" value="">
+        <input type="submit" value="Destroy">
+    </form>
+</body>
+
+</html>
