@@ -51,16 +51,16 @@ routes.addRoute('/songs/:id', function(req, res, url) {
     songs.findOne({_id: url.params.id}, function(err, doc) {
       if (err) res.end('It broke')
       var file = fs.readFileSync('templates/songs/show.html')
-      var template = view.render(file.toString(), doc) 
+      var template = view.render(file.toString(), doc)
       res.end(template)
     })
   }
 })
-routes.addRoute('/bands/:id/delete', (req, res, url) => {
+routes.addRoute('/songs/:id/delete', (req, res, url) => {
   if (req.method === 'POST') {
-    bands.remove({_id: url.params.id}, function(err, doc) {
+    songs.remove({_id: url.params.id}, function(err, doc) {
       if (err) console.log(err)
-      res.writeHead(302, {'Location': '/bands'})
+      res.writeHead(302, {'Location': '/songs'})
       res.end()
     })
   }
