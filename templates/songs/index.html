@@ -6,8 +6,8 @@
   <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
-  <h1>Songs</h1>
-  <a href="/songs/new">Add a Song</a>
+  <div class="circle"><h1 class="song">Songs</h1></div>
+  <a href="/songs/new"><button>Add a Song</button></a>
   {{#songs}}
   <a href="/songs/{{_id}}"><h2>{{name}}</h2></a>
   <form action="/songs/{{_id}}/delete" method="post">
