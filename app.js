@@ -13,7 +13,7 @@ var server = http.createServer(function (req, res) {
   currentRoute.fn(req, res, currentRoute)
 })
 
-server.listen(8080, function (err) {
+server.listen(8050, function (err) {
   if (err) console.log('Doah', err)
-  console.log('Woot. A server is running on port 8080')
+  console.log('Woot. A server is running on port 8050')
 })
