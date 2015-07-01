@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Songs</title>
+    <link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/style.css"/>
+</head>
+<body>
+<div>
+    <form action="/songs/new" method="GET">
+        <button>Add Song</button>
+    </form>
+    <h2>{{pageTitle}}</h2>
+    {{#songs}}
+    <hr>
+    <h2>Artist: <a href='/songs/{{_id}}/'>{{artist}}</h2></a>
+    <p>Song: {{name}}</p>
+
+    <form action="/songs/{{_id}}/delete" method="post">
+        <button>Delete</button>
+    </form>
+    {{/songs}}
+</div>
+
+</body>
+</html>
