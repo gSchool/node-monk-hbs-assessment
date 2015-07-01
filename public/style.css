@@ -1,5 +1,8 @@
 body {
-    background: #feffe7;
+    background: #ffffff;
+}
+nav {
+    text-align: center;
 }
 a {
     color: darkslategray;
