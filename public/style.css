@@ -1,0 +1,30 @@
+body{
+    background: url('http://fc00.deviantart.net/fs71/f/2013/026/b/b/stargate_stonehenge_by_puky7-d5st1tb.jpg')no-repeat;
+    background-size: cover;
+
+}
+a{
+    text-decoration: none;
+    color: red;
+}
+a:hover{
+    color: blue;
+}
+h2{
+    color:red;
+}
+h2:hover{
+    color:purple;
+}
+label{
+    color: green;
+}
+label:hover{
+    color: brown;
+}
+input{
+    color: silver;
+}
+input:hover{
+    color: cyan;
+}

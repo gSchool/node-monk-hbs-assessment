@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = 'stylesheet' href = '/public/style.css'>
+    <title>Document</title>
+</head>
+<body>
+
+<h2>{{pageTitle}}</h2>
+<button><a href="songs/new">ADD NEW SONG</a></button>
+{{#titles}}
+<a href = '/songs/{{_id}}/'><h2>{{title}}</h2></a>
+<form action="/songs/{{_id}}/delete" method="post">
+    <input type="submit" value="Destroy" class ="destroy"/>
+</form>
+{{/titles}}
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel = 'stylesheet' href = '/public/style.css'>
+    <title>Document</title>
+</head>
+<body>
+<form action="/songs" method="post" id ="bn">
+    <label for="songTitle">Song Title</label>
+    <input type="text" name = 'title' id="songTitle"/>
+    <label for="length">length</label>
+    <select name="length" id="length">
+        <option value="1000ms">1000ms</option>
+        <option value="2000ms">2000ms</option>
+        <option value="3000ms">3000ms</option>
+        <option value="4000ms">4000ms</option>
+        <option value="5000ms">5000ms</option>
+    </select>
+    <input type="submit" value = 'Add a song'/>
+</form>
+<a href="/songs">ALL SONGS</a>
+</body>
+</html>
