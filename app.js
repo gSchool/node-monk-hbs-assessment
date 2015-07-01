@@ -1,6 +1,6 @@
 var http = require('http'),
     router = require('./router'),
-    url = require('url')
+    url = require('url');
 
 var server = http.createServer(function (req, res) {
   if (req.url === '/favicon.ico') {
@@ -10,7 +10,7 @@ var server = http.createServer(function (req, res) {
   }
   var path = url.parse(req.url).pathname
   var currentRoute = router.match(path)
-  currentRoute.fn(req, res, currentRoute)
+  currentRoute.fn (req, res, currentRoute)
 })
 
 server.listen(8080, function (err) {

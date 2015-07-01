@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+  <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+<h3>Songs</h3>
+{{#songs }}
+  <a href="/songs/{{_id}}/"></h2>
+      <button><a href="songs/{{_id}}/edit">Add New Band</a></button>
+      <form action="/songs/{{_id}}/delete" method ="post">
+        <input type="submit" value="delete it!">
+      </form>
+{{/songs}}
+</body>
+</html>
