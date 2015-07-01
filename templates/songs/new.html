@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="/public/style.css">
   <title>New</title>
 </head>
 <body>
-
+  <header>
+    <h1>g33tar's playlist</h1>
+    <a href="/songs/"><button>Songs</button></a>
+  </header>
+    <form action="/songs/new" method = 'POST'>
+      <label for="name">Song Title:</label>
+      <input id='name' type="text" name='title'  value= ''>
+        <br>
+        <br>
+      <label for="name">Artist:</label>
+      <input id='name' type="text" name='artist'  value= ''>
+        <br>
+        <br>
+      <label for="name">Song Duration(ms):</label>
+      <input id='name' type="text" name='length'  value= ''>
+        <br>
+        <br>
+      <input type="submit"  value='Add Song'>
+    </form>
 </body>
 </html>

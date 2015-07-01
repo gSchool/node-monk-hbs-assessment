@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="/public/style.css">
   <title>index</title>
 </head>
 <body>
-
+  <header>
+    <h1>g33tar's playlist</h1>
+  <a href="/songs/new/"><button class= "mainnav">Add song to playlist</button></a>
+  </header>
+    {{#songs}}
+    <a href="/songs/{{_id}}"><h2>{{title}}</h2></a>
+    <form action="/songs/{{_id}}/delete" method ="POST">
+      <input type="submit" class="button" value = 'Delete {{title}}' >
+    </form>
+    {{/songs}}
 </body>
 </html>

@@ -6,7 +6,7 @@ var routes = require('routes')(),
     songs = db.get('songs'),
     view = require('mustache')
 
-routes.addRoute('/songs/new', (req, res, url) => {
+routes.addRoute('/songs/new', function(req, res, url){
   res.setHeader('Content-Type', 'text/html')
   if (req.method === 'GET') {
     var file = fs.readFileSync('templates/songs/new.html')
@@ -44,7 +44,7 @@ routes.addRoute('/songs/:id', function(req, res, url){
   if(req.method === 'GET'){
     songs.findOne({_id: url.params.id}, function(err, song){
       if(err) throw err
-      var file = readFileSynch('templates/songs/show.html')
+      var file = fs.readFileSync('templates/songs/show.html')
       var template = view.render(file.toString(), song)
       res.end(template)
     })
@@ -53,7 +53,7 @@ routes.addRoute('/songs/:id', function(req, res, url){
 routes.addRoute('/songs/:id/delete', function(req, res, url){
   if(req.method === 'POST'){
     res.setHeader('Content-Type', 'text/html')
-    bands.remove({_id: url.params.id}, function(err, band){
+    songs.remove({_id: url.params.id}, function(err, band){
       if (err) throw err
       res.writeHead(302,{'Location': '/songs'})
       res.end()
