@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{songTitle}}</title>
+  <title>Song Information</title>
   <link rel="stylesheet" href="/public/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'><body>
 </head>
 <body>
   {{#songs}}
-  {{songTitle}}
+  <h4>Song Title: {{songTitle}}</h4>
+  <h5>Length in milliseconds: {{length}}</h5>
   {{/songs}}
 </body>
 </html>

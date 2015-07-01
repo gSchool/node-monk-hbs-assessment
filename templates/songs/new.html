@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Add New Song</title>
+  <link rel="stylesheet" href="/public/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'><body>
+
 </head>
 <body>
+  <form action="/songs/new" method ="post">
+    <label for="songTitle">Song Name</label>
+    <input id = "songTitle" type="text" name="songTitle">
+    <input type="submit" value="Add a Song">
+  </form>
 
 </body>
 </html>
