@@ -6,6 +6,13 @@ var routes = require('routes')(),
   songs = db.get('songs'),
   mime = require('mime')
 
+bars.registerHelper('isLongSong', function (length) {
+  console.log(length)
+  if (parseInt(length) > 600000) {
+    return "This song is really long.."
+  }
+})
+
 function prep (file, obj, res) {
   res.setHeader('Content-Type', 'text/html');
   var file = fs.readFileSync(file)
