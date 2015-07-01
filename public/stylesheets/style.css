@@ -1,0 +1,22 @@
+body {
+  color: hotpink;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-variant: small-caps;
+}
+
+h2 {
+  font-variant: small-caps;
+}
+
+a {
+  text-decoration: none;
+  color: purple;
+}
+
+a:hover {
+  color: gold;
+}

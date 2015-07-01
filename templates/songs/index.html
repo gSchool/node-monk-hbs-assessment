@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Songs</title>
+  <link rel="stylesheet" href="/public/stylesheets/style.css">
+</head>
+<body>
+  <h1>Listen</h1>
+  <img src="https://heavyeditorial.files.wordpress.com/2015/04/ll-cool.jpg?quality=65&strip=all&strip=all" alt="listen" height="350">
+  <h1>List of Songs | <a href="/songs/new">Add a New Song</a></h1>
+  <br>
+  {{#songs}}
+  <p>–––––––––––––––––––––</p>
+    <a href="/songs/{{_id}}/"><h2>{{title}}</h2></a>
+    <a href="/songs/{{_id}}/"><h2>Length: {{length}}</h2></a>
+    <form action="/songs/{{_id}}/delete" method="post">
+      <input type="submit" value="Delete song: {{title}}">
+    </form>
+    <br>
+    <br>
+  {{/songs}}
+</body>
+</html>
