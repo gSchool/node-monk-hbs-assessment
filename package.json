@@ -1,9 +1,10 @@
 {
   "name": "form-post-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "To start the server, run `npm run start`.",
   "main": "app.js",
   "dependencies": {
+    "mustache": "^2.1.2",
     "routes": "^2.0.0"
   },
   "devDependencies": {},
@@ -12,5 +13,13 @@
     "start": "nodemon --harmony app.js"
   },
   "author": "Aaron Gray <aaron@hellometa.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DarinSmith86/node-monk-hbs-assessment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DarinSmith86/node-monk-hbs-assessment/issues"
+  },
+  "homepage": "https://github.com/DarinSmith86/node-monk-hbs-assessment"
 }
