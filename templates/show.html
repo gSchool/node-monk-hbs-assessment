@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/public/style.css">
+  <title>{{title}}</title>
+</head>
+<body>
+<section>
+  <h1>Title of the song<span>Song Length/ms</span></h1>
+  <h2>{{title}}<span>{{length}}</span></h2>
+  <form action="/songs/{{_id}}/delete" method = "POST">
+    <input type="submit" value = 'Delete {{title}}'>
+  </form>
+</section>
+</body>
+</html>
