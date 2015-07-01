@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update the Song Information</title>
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+  <h1>{{title}}</h1>
+  <h2>{{time}}</h2>
+  <form method="post" action="/songs/{{_id}}/update">
+    <input type="text" name="title" id="title" placeholder="Song Title">
+    <input type="text" name="time" id="time" placeholder="Song Duration">
+    <input type="submit" value="update">
+  </form>
+</body>
+</html>
