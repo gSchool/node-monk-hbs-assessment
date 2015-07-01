@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "monk": "^1.0.1",
+    "mustache": "^2.1.2",
     "routes": "^2.0.0"
   },
   "devDependencies": {},
