@@ -16,6 +16,55 @@ routes.addRoute('/songs', (req, res, url) => {
       res.end(template)
     })
   }
+  if (req.method === 'POST') {
+    console.log(req.method)
+    var data = ''
+    req.on('data', function(chunk) {
+      data += chunk
+    })
+    req.on('end', function(){
+      var song = qs.parse(data)
+      songs.insert(song, function(err, doc) {
+        if (err) res.end('oops')
+        res.writeHead(302, {'Location': '/songs'})
+        res.end()
+      })
+    })
+    console.log('Thanks for the data!')
+  }
+})
+routes.addRoute('/bands/new', function (req,res,url) {
+  console.log(req.url)
+  res.setHeader('Content-Type', 'text/html')
+  if (req.method === 'GET') {
+    console.log(req.method)
+    var file = fs.readFileSync('templates/bands/new.html')
+    var template = view.render(file.toString(), {})//called docs, an array from mongo
+    res.end(template)
+  }
+})
+routes.addRoute('/bands/touring', (req, res, url) => {
+  console.log(req.url)
+  res.setHeader('Content-Type', 'text/html')
+  if (req.method === 'GET') {
+    console.log(req.method);
+    bands.find({onTour: true}, function(err, docs) {
+      if (err) res.end('It broke')
+      var file = fs.readFileSync('templates/bands/index.html')
+      var template = view.render(file.toString(), {bands: docs})//called docs, an array from mongo
+      res.end(template)
+    })
+  }
+})
+routes.addRoute('/songs/new', function (req,res,url) {
+  console.log(req.url)
+  res.setHeader('Content-Type', 'text/html')
+  if (req.method === 'GET') {
+    console.log(req.method)
+    var file = fs.readFileSync('templates/songs/new.html')
+    var template = view.render(file.toString(), {})
+    res.end(template)
+  }
 })
 routes.addRoute('/public/*', function (req, res, url) { // dynamically selecting public anything
   console.log(req.url)
