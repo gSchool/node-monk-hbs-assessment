@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Song Collection</title>
+  <link rel="stylesheet" href="/public/songs/index.html">
+</head>
+<body>
+  {{#songs}}
+  <a href="/songs/{{_id}}"><h2>Title: {{songTitle}}</h2><h3>Length in Milliseconds: {{length}}</h3></a>
+  <form action="/songs/{{_id}}/delete" method="post"></form>
+    <input type="submit" value="Delete">
+  </form>
+  {{/songs}}
+</body>
+</html>
