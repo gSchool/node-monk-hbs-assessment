@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Song</title>
+  <link rel="stylesheet" href="/public/style.css"/>
+</head>
+<body>
+  <h1>Add song!</h1>
+  <form action="/songs" method="post">
+    <input type="text" placeholder="Title" name="title"/>
+    <input type="number" placeholder="Length" name="length"/>
+    <input type="submit" value="Add!"/>
+  </form>
+</body>
+</html>

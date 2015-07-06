@@ -4,6 +4,11 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "mime-types": "^2.1.2",
+    "monk": "^1.0.1",
+    "mustache": "^2.1.2",
+    "qs": "^4.0.0",
+    "querystring": "^0.2.0",
     "routes": "^2.0.0"
   },
   "devDependencies": {},

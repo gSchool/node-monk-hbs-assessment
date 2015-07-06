@@ -1,0 +1,25 @@
+body {
+  background-color: rgb(212, 82, 173);
+  color: black;
+  font-family: monospace;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+input[type="submit"] {
+  background: black;
+  color: white;
+  border: none;
+  font-size: 14px;
+  margin: 5px;
+  font-family: monospace;
+  border-radius: 10px;
+}
