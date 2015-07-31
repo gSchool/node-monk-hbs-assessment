@@ -1,0 +1,62 @@
+@import url(http://fonts.googleapis.com/css?family=Orbitron);
+@import url(http://fonts.googleapis.com/css?family=Exo);
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body{
+font-family: 'Exo', sans-serif;
+}
+header {
+  background: rgba(36, 47, 70, 1);
+  width: 100%;
+  margin-bottom: 20px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  }
+header h1 {
+  display: inline-block;
+  color: rgba(245,178, 29, 1);
+  font-weight: 100;
+  margin-left: 50px;
+  margin-top: 20px;
+  }
+
+.mainnav {
+  float:right;
+  display: inline-block;
+  margin-right: 60px;
+  margin-top: 17px;
+  color: #ebebeb;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+h1{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+h3{
+  text-align: center;
+}
+.button {
+  text-align: center;
+  color: #ebebeb;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.title{
+  color:rgba(36, 47, 70, 1);
+}
+.newLables{
+  font-size: 30px;
+  color:rgba(36, 47, 70, 1)
+}
+#name{
+  font-size: 20px;
+  height:60px;
+  width:200px;
+}
